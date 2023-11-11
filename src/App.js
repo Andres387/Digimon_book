@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import ItemDigimonList from './components/ItemDigimonList';
 
+
+// const sample = {
+//   name: "Koromon",
+//   img: "https://digimon.shadowsmith.com/img/koromon.jpg",
+//   level: "In Training"
+// }
 function App() {
+  const[ListDigimons, setListDigimons] = React.useState([]);
+
+  React.useEffect(()=>{
+    fetch("https://digimon-api.vercel.app/api/digimon")
+      .then(response =>response.json())
+      .then(dataJson =>{setListDigimons(dataJson)});
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Digimon book
-        </a>
-      </header>
+      <h1>Digimon PryyBook</h1>
+      {ListDigimons.map(digimon => <ItemDigimonList 
+          name={digimon.name} 
+          img={digimon.img} 
+          level={digimon.level}
+          key = {digimon.name} 
+          />
+        )
+      }
     </div>
   );
 }

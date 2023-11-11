@@ -1,0 +1,42 @@
+.card-box{
+    justify-content: center;
+    display: flex;
+    background-color: black;
+}
+.container-main{
+    border-radius: 10%;
+    box-shadow: 0px 0px 5px 7px rgb(236, 14, 14);
+    -webkit-box-shadow: 0px 0px 5px 7px rgb(235, 232, 21);
+    -moz-box-shadow: 0px 0px 5px 7px rgba(77,235,21,1);margin: 20px;
+    padding: 20px;
+    width: 330px;
+    background-color: aqua;
+}
+
+.img-box{
+    border-color: black;
+    border: red 5px ridge;
+}
+
+.header-box {
+    display: flex;
+    column-gap:  10px;
+    padding: 5px;
+}
+
+.body-box {
+    padding-left: 95px;
+}
+
+.body-box p{
+    text-align: left;
+}
+.like-box {
+    display: flex;
+    justify-content: left;
+    padding-left: 95px;
+}
+
+.container-box {
+    
+}
