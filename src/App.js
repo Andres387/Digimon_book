@@ -78,7 +78,7 @@ function App() {
   return (
     <div className="App">
       <h1>Digimon PryyBook</h1>
-      <input ref={myInput}/>
+      <p>BUSCALO POR NOMBRE O LEVEL <input ref={myInput}/></p>
       {displayDigimons.map(digimon => <ItemDigimonList 
           name={digimon.name} 
           img={digimon.img} 
