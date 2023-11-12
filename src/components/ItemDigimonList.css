@@ -1,7 +1,7 @@
 .card-box{
     justify-content: center;
     display: flex;
-    background-color: black;
+    background-image: url= ("./digivice.jpg");
 }
 .container-main{
     border-radius: 10%;
