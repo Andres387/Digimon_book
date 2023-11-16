@@ -8,12 +8,15 @@ import ItemDigimonList from './components/ItemDigimonList';
 //   img: "https://digimon.shadowsmith.com/img/koromon.jpg",
 //   level: "In Training"
 // }
+const limit = 5;
+
 function App() {
   const[ListDigimons, setListDigimons] = React.useState([]);
   const[displayDigimons, setDisplayDigimons] = React.useState([]);
   const[search, setSearch] = React.useState("");
   // const[shouldUpdate, setShouldUpdate] = React.useState(false);
-
+  const[page, setPage] = React.useState(1);
+  const offSet = (page-1)*limit;
   // const myFunction = React.useCallback((parametro1, parametro2) => {
 
   // }[shouldUpdate]);
@@ -42,15 +45,19 @@ function App() {
   //   console.log("render function");
   //     // render monting  did monting
   //   },[myFunction, myObject]);
-
-  React.useEffect(()=>{
-    fetch("https://digimon-api.vercel.app/api/digimon")
+  const fetchData = () => {
+    fetch("https://digimon-api.vercel.app/api/digimon?limit="+limit+"&offset="+offSet)
       .then(response =>response.json())
-      .then(dataJson =>{
+      .then(dataJson => {
         setListDigimons(dataJson);
         setDisplayDigimons(dataJson);
       });
-  },[])
+  };
+
+
+  React.useEffect(() => {
+    fetchData();
+  },[offSet])
 
   React.useEffect(()=>{
     console.log("disparo render");
@@ -73,7 +80,14 @@ function App() {
       return ()=> null;
         // component will  Un monting
       },[]);
-  
+  const next = () => {
+    setPage(page => page +1);
+  };
+  const back = () => {
+    setPage(page => page -1);
+  };
+
+  console.log(page, offSet, limit);
 
   return (
     <div className="App">
@@ -87,6 +101,8 @@ function App() {
           />
         )
       }
+      {page !== 1 && <button onClick={back}>Atras</button>}
+      <button onClick={next}>Siguiente</button>
     </div>
   );
 }
