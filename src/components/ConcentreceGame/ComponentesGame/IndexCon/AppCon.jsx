@@ -5,6 +5,10 @@ import JeisonPictures from '../ImagesCon/JeisonPictures';
 import DisplayResults from '../DisplayResults/DisplayResults';
 import { Route } from 'react-router-dom';
 
+import useSound from 'use-sound';
+import win from '../../../resurcesMusic/win.wav';
+import faul from '../../../resurcesMusic/faul.wav';
+import lastDay from '../../../resurcesMusic/lastDays.mp3';
 
 let numbers = [1,5,2,6,3,8,4,7,5,1,6,2,7,3,4,8]
 numbers = numbers.sort(()=>{return Math.random()-0.5});
@@ -18,7 +22,7 @@ function AppCon () {
     const [actualIndex, setActualIndex] = React.useState  (null);
     const [actualSelection, setActualSelection] = React.useState (null);
     const [parCount, setParCount] = React.useState(1);
-    const [countDown, setCountDown] = React.useState(60);
+    const [countDown, setCountDown] = React.useState(5);
     const [timeIsUp, setTimeIsUp] = React.useState(false);
     const [encontrada, setEncontrada] = React.useState(false);
     const refCartas = React.useRef([]);
@@ -27,6 +31,10 @@ function AppCon () {
     // let ref1 = React.useRef (null);
     // let ref2 = React.useRef (null);
     // let temporizador = (false);
+
+    const [playSound1] = useSound(win);
+    const [playSound2] = useSound(faul);
+    const [playSound3] = useSound(lastDay);
 
     React.useEffect(() => {
             const countdownInterval = setInterval(() => {
@@ -76,6 +84,7 @@ function AppCon () {
                 ) {
                     // console.log ("son the same", ref2, ref1)
                     setParCount(prevParCount => prevParCount + 1);
+                    playSound1();
                     //, "pareja"
                     // console.log (parCount, "son parenas")
                     clearTimeout(refCartas.current[refCartas.current.length - 1]);
@@ -95,6 +104,7 @@ function AppCon () {
                             if (carta) {
                             carta.style.pointerEvents = "auto";
                             carta.classList.remove ("volteo");
+                            playSound2();
                             setActualSelection (null);
                         }
                     },3000);
@@ -104,6 +114,7 @@ function AppCon () {
     },[actualIndex]);
 
     function destape (event) {
+        // playSound3();
         // if(temporizador == false){
         //     contarTiempo();
         //     temporizador = true;
