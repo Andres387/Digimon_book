@@ -1,4 +1,4 @@
-import './ItemDigimonList.css';//ItemCrypto
+import '../components/ItemDigimonList.css';//ItemCrypto
 
 const ItemDigimonList = (props)=> {
     return (

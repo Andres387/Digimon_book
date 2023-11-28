@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import '../src/App.css';
 import ItemDigimonList from './components/ItemDigimonList';
 
 
@@ -11,7 +11,7 @@ import ItemDigimonList from './components/ItemDigimonList';
 const limit = 5;
 
 function App() {
-  const[ListDigimons, setListDigimons] = React.useState([]);
+  const[listDigimons, setListDigimons] = React.useState([]);
   const[displayDigimons, setDisplayDigimons] = React.useState([]);
   const[search, setSearch] = React.useState("");
   // const[shouldUpdate, setShouldUpdate] = React.useState(false);
@@ -28,13 +28,13 @@ function App() {
 
   React.useEffect (()=>{
     myInput.current.addEventListener('keyup', ()=>{
-                                                    console.log(myInput.current.value);
-                                                    setSearch(myInput.current.value);
-                                                  })
+                                                  console.log(myInput.current.value);
+                                                  setSearch(myInput.current.value);
+                                                })
   },[])
 
   React.useEffect(()=>{
-    const filteredData = ListDigimons.filter((digimon) => {
+    const filteredData = listDigimons.filter((digimon) => {
       console.log(digimon.name, search)
       return digimon.name.toLowerCase().includes(search.toLowerCase()) ||
       digimon.level.toLowerCase().includes(search.toLowerCase())
@@ -93,15 +93,15 @@ function App() {
     <div className="App">
       <h1>Digimon PryyBook</h1>
       <p>BUSCALO POR NOMBRE O LEVEL <input ref={myInput}/></p>
-      {displayDigimons.map(digimon => <ItemDigimonList 
-          name={digimon.name} 
-          img={digimon.img} 
-          level={digimon.level}
-          key = {digimon.name} 
-          />
-        )
-      }
-      {page !== 1 && <button onClick={back}>Atras</button>}
+        {displayDigimons.map(digimon => <ItemDigimonList 
+            name={digimon.name} 
+            img={digimon.img} 
+            level={digimon.level}
+            key = {digimon.name} 
+            />
+          )
+        }
+        {page !== 1 && <button onClick={back}>Atras</button>}
       <button onClick={next}>Siguiente</button>
     </div>
   );

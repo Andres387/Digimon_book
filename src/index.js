@@ -1,13 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import '../src/index.css';
 import App from './App';
+import AppCon from './components/ConcentreceGame/ComponentesGame/IndexCon/AppCon';
 import reportWebVitals from './reportWebVitals';
+
+
+import {
+    createBrowserRouter,
+    RouterProvider,
+    // Route,
+    // Link,
+  } from "react-router-dom";
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <App/>
+      ),
+    },
+    {
+      path: "concentrece-game",
+      element: (
+        <AppCon/>
+      ),
+    },
+  ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-    <App />
+    <RouterProvider router = {router} />
   
 );
 

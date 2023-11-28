@@ -1,0 +1,53 @@
+
+h1{
+    text-align: center;
+}
+
+  
+
+  .row div{
+    cursor: pointer;
+}
+  
+
+
+  
+  
+.carta-box {
+    margin: 345px, 395px;
+    width: 90px;
+    height: 100px;
+    position: relative;
+    perspective: 1000px;
+}
+  
+.volteo .carta {
+    transform: rotateY(180deg);
+}
+  
+.carta {
+    transform-style: preserve-3d;
+    transition: all 0.5s linear;
+  }
+  
+.cara {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.cara.detras {
+    transform: rotateY(180deg);
+}
+
+.imgCon {
+    width: 90px;
+    height: 100px;
+    border-radius: 8px;
+} 
+footer{
+    text-align: center;
+    color: red;
+}
+a{
+    text-decoration: none;
+}

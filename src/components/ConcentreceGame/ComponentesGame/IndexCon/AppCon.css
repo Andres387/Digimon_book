@@ -1,0 +1,34 @@
+
+.bodyCon {
+  /* margin-right: 400px;
+  margin-left: 400px; */
+  
+  background-color: black;
+  background-image: url("../pictures/quiereCacao2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.mainCon{
+  
+  width: 650px;
+  margin: 100px auto 30px;
+  display: flex;
+  align-items: center;
+}
+.row {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: center;
+}
+.section1{
+  margin-top: 400px;
+  padding: 10px 0px 10px 0px;
+  border-radius:   8px;
+  background-color: rgba(255, 255, 255,0.2);
+}
+
+

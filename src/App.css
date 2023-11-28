@@ -1,5 +1,8 @@
 .App {
+  /* background-repeat: no-repeat; */
+  background-size: 100%;
   text-align: center;
+  background-image: url('./components/digivice.jpg');
 }
 
 .App-logo {
