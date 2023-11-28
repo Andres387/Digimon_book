@@ -129,39 +129,43 @@ function AppCon () {
         });
     }
     return (
+        
     <div className="bodyCon">
-        <div className='mainCon'>
-            <div className="section1">
-                    <div className="row">
-                        {
-                            numbers.map((element, index)=>{
-                                return (
-                                    <Card 
-                                        img = {JeisonPictures[element -1].img} 
-                                        par = {element}
-                                        destape = {destape}
-                                        id = {index + 1}
-                                        key = {index}
-                                    />
-                                )
-                            })
-                        }
+        <a href='/'>
+            <button className='buttonBack' >Go Back</button>
+        </a>
+            <div className='mainCon'>
+                <div className="section1">
+                        <div className="row">
+                            {
+                                numbers.map((element, index)=>{
+                                    return (
+                                        <Card 
+                                            img = {JeisonPictures[element -1].img} 
+                                            par = {element}
+                                            destape = {destape}
+                                            id = {index + 1}
+                                            key = {index}
+                                        />
+                                    )
+                                })
+                            }
+                            
+                        </div>
+                </div>
                         
-                    </div>
+                <div>
+                    {/* {displayResults.map(result => */}
+                            <DisplayResults
+                                match =  {parCount - 1}
+                                countDown =  {countDown +1}
+                                // moves = {result.moves}
+                                // parejasEncontradas = {result.parejasEncontradas}
+                            />
+                        
+                </div>
+                
             </div>
-                    
-            <div>
-                {/* {displayResults.map(result => */}
-                        <DisplayResults
-                            match =  {parCount - 1}
-                            countDown =  {countDown +1}
-                            // moves = {result.moves}
-                            // parejasEncontradas = {result.parejasEncontradas}
-                        />
-                    
-            </div>
-            
-        </div>
         <footer>
             <p> Juego programado por <a href="www.molinasgroupdevelper.com">Andres Molina</a></p>
         </footer>

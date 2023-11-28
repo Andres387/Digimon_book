@@ -34,7 +34,7 @@
   background: linear-gradient(-45deg, #ff0000, #a85925, #61dafb);
   background-size: 200% 200%;
   animation: fuego 2s infinite;
-}
+};
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

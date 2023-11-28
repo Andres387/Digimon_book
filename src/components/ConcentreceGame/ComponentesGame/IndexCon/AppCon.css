@@ -30,5 +30,27 @@
   border-radius:   8px;
   background-color: rgba(255, 255, 255,0.2);
 }
+@keyframes fuego {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
+.buttonBack {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: linear-gradient(-45deg, #ff0000, #a85925, #61dafb);
+  background-size: 200% 200%;
+  animation: fuego 2s infinite;
+};
 
