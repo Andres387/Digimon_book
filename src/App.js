@@ -91,8 +91,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Digimon PryyBook</h1>
-      <p>BUSCALO POR NOMBRE O LEVEL <input ref={myInput}/></p>
+      <h1>Dirigido por : Roberto Molina</h1>
+      <p> <input ref={myInput} placeholder='BUSCALO POR NOMBRE O LEVEL'/></p>
+      <a href='/concentrece-game'>
+        <button className='buttonRoute' >Concentrece Game</button>
+      </a>
         {displayDigimons.map(digimon => <ItemDigimonList 
             name={digimon.name} 
             img={digimon.img} 

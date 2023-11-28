@@ -16,7 +16,11 @@ import {
     {
       path: "/",
       element: (
-        <App/>
+        <App>
+          {/* <Link to="concentrece-game">
+            <button>Ir al juego Concentrece</button>
+          </Link> */}
+        </App>
       ),
     },
     {

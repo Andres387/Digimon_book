@@ -4,10 +4,36 @@
   text-align: center;
   background-image: url('./components/digivice.jpg');
 }
+.App h1{
+  text-align: center;
+  color: rgb(247, 5, 5);
+}
+.App p{
+  
+  color: rgb(247, 5, 5);
+}
+@keyframes fuego {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.buttonRoute {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: linear-gradient(-45deg, #ff0000, #a85925, #61dafb);
+  background-size: 200% 200%;
+  animation: fuego 2s infinite;
 }
 
 @media (prefers-reduced-motion: no-preference) {

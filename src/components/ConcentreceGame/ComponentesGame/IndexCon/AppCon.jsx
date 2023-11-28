@@ -3,7 +3,7 @@ import './AppCon.css';
 import Card from '../Card/Card';
 import JeisonPictures from '../ImagesCon/JeisonPictures';
 import DisplayResults from '../DisplayResults/DisplayResults';
-
+import { Route } from 'react-router-dom';
 
 
 let numbers = [1,5,2,6,3,8,4,7,5,1,6,2,7,3,4,8]
